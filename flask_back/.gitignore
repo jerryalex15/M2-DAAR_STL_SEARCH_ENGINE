@@ -1,0 +1,6 @@
+*.zip
+*.pkl
+/books
+/venv
+__pycache__/
+myBooks
