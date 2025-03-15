@@ -1,44 +1,79 @@
 import requests
+import json
 import os
-import re
 
-# Créer un dossier pour stocker les livres
-os.makedirs("books", exist_ok=True)
+def download_books(start_id=0):
+    base_url = "https://gutendex.com/books"
+    output_dir = "myBooks"
+    metadata_file = os.path.join(output_dir, "books.json")
+    max_books = 1664
 
-def is_english(content):
-    # Vérifier si "Language: English" apparaît dans les 5000 premières lignes
-    first_5000_lines = "\n".join(content.splitlines()[:5000])
-    return "Language: English" in first_5000_lines
+    # Crée le dossier s'il n'existe pas
+    os.makedirs(output_dir, exist_ok=True)
 
-def download_book(book_id, book_number):
-    url = f"https://www.gutenberg.org/cache/epub/{book_id}/pg{book_id}.txt"
-    response = requests.get(url, timeout=10)
-    
-    if response.status_code == 200:
-        content = response.text
-        
-        # Vérifier si le livre est en anglais
-        if not is_english(content):
-            print(f"❌ Livre {book_id} ignoré (pas en anglais).")
-            return False
+    # Charger les métadonnées existantes
+    if os.path.exists(metadata_file):
+        with open(metadata_file, "r", encoding="utf-8") as f:
+            books_metadata = json.load(f)
+    else:
+        books_metadata = []
 
-        # Compter les mots
-        words = re.findall(r'\b\w+\b', content)
-        if len(words) >= 10000:
-            # Nommer les fichiers avec un numéro basé sur l'ordre de téléchargement
-            with open(f"books/book_{book_number}.txt", "w", encoding="utf-8") as f:
-                f.write(content)
-            print(f"✅ Livre {book_number} téléchargé ({len(words)} mots, Anglais).")
-            return True
-    return False
+    existing_ids = {book["id"] for book in books_metadata}
 
-# Télécharger 1664 livres valides en anglais
-book_count = 1119 # Compteur des livres téléchargés
-for book_id in range(1119 + 1, 5000):  # Parcourir les IDs de Gutenberg
-    if download_book(book_id, book_count + 1):  # Utiliser le compteur pour nommer
-        book_count += 1
-    if book_count >= 1664:
-        print("✅ Téléchargement terminé : 1664 livres en anglais obtenus.")
-        break
+    page = 1
+    while len(books_metadata) < max_books:
+        print(f"Fetching page {page}...")
+        response = requests.get(base_url, params={"page": page})
+        if response.status_code != 200:
+            print("Error fetching data.")
+            break
 
-print(f"📚 Total de livres en anglais téléchargés : {book_count}")
+        data = response.json()
+        for book in data["results"]:
+            if len(books_metadata) >= max_books:
+                break
+
+            if book["id"] <= start_id:
+                continue
+
+            if "en" in book["languages"] and "text/plain; charset=us-ascii" in book["formats"] and book["id"] not in existing_ids:
+                text_url = book["formats"]["text/plain; charset=us-ascii"]
+                text_response = requests.get(text_url)
+
+                # Vérifier si le contenu dépasse 10 000 mots
+                text_content = text_response.text
+                if len(text_content.split()) > 10000:
+                    print(f"Downloading: {book['title']}")
+
+                    # Enregistrer le texte
+                    text_path = os.path.join(output_dir, f"{book['id']}.txt")
+                    with open(text_path, "w", encoding="utf-8") as f:
+                        f.write(text_content)
+
+                    # Sauvegarder les métadonnées avec l'URL de l'image
+                    books_metadata.append({
+                        "id": book["id"],
+                        "title": book["title"],
+                        "authors": [author["name"] for author in book["authors"]],
+                        "language": book["languages"],
+                        "text_url": text_url,
+                        "image_url": book["formats"].get("image/jpeg", None)
+                    })
+
+                    # Mettre à jour les métadonnées
+                    with open(metadata_file, "w", encoding="utf-8") as f:
+                        json.dump(books_metadata, f, ensure_ascii=False, indent=4)
+
+        # Arrêter si aucune page suivante
+        if not data["next"]:
+            break
+
+        page += 1
+
+    print(f"Téléchargement terminé : {len(books_metadata)} livres téléchargés.")
+
+if __name__ == "__main__":
+    start_id = 1666
+    download_books(start_id)
+
+

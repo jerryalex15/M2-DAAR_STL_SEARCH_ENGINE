@@ -3,7 +3,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # Charger la matrice d'adjacence
-with open("adjacency_df_jaccard.pkl", "rb") as f:
+with open("utils/adjacency_df_jaccard.pkl", "rb") as f:
     adjacency_df = pickle.load(f)
 
 # Créer un graphe non orienté

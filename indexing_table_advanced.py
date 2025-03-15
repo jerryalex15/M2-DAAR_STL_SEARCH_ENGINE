@@ -1,13 +1,13 @@
 import os
 import re
+import json
 import shutil
 import pandas as pd
 import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Chemin du dossier contenant les livres
-books_folder = "books"
+books_folder = "myBooks"
 
 # Récupérer la liste des fichiers texte
 book_paths = [os.path.join(books_folder, f) for f in os.listdir(books_folder) if f.endswith(".txt")]
@@ -16,15 +16,25 @@ book_paths = [os.path.join(books_folder, f) for f in os.listdir(books_folder) if
 if not book_paths:
     raise ValueError("Aucun livre trouvé dans le dossier 'books'.")
 
-# Fonction pour extraire le titre et l'auteur à partir des métadonnées
-def extract_metadata(text):
-    title_match = re.search(r"^Title:\s*(.*?)(?=\n|$)", text, re.IGNORECASE)
-    author_match = re.search(r"^Author:\s*(.*?)(?=\n|$)", text, re.IGNORECASE)
-
-    title = title_match.group(1) if title_match else "Unknown Title"
-    author = author_match.group(1) if author_match else "Unknown Author"
+def load_metadata(json_path):
+    with open(json_path, "r", encoding="utf-8") as f:
+        return json.load(f)
     
-    return title, author
+# Récupérer les informations d'un fichier donné
+def get_metadata_by_file_name(metadata, file_name):
+    # Extraire l'ID du nom de fichier (ex : "26184.txt" -> 26184)
+    match = re.search(r"(\d+)", file_name)
+    if not match:
+        return None
+    
+    file_id = int(match.group(1))
+
+    # Parcourir les métadonnées et trouver l'entrée avec le bon ID
+    for entry in metadata:
+        if entry["id"] == file_id:
+            return entry
+    
+    return None
 
 # Tokenizer personnalisé : Garde uniquement les mots en alphabet latin (2 lettres minimum)
 def custom_tokenizer(text):
@@ -37,20 +47,29 @@ tfidf_vectorizer = TfidfVectorizer(input='filename', stop_words='english', token
 temp_folder = "books_temp"
 os.makedirs(temp_folder, exist_ok=True)
 
+# Exemple d'utilisation
+json_path = "utils/books.json"
+metadata = load_metadata(json_path)
+
 # Lire et préparer le texte des livres avec les métadonnées
 for book_path in book_paths:
     with open(book_path, 'r', encoding='utf-8') as file:
         content = file.read()
         
         # Extraire le titre et l'auteur
-        title, author = extract_metadata(content)
+        book_info = get_metadata_by_file_name(metadata, book_path)
 
+        # Ajouter le titre et l'auteur plusieurs fois
         num_repetitions_title = 10
         num_repetitions_author = 15
         
-        # Ajouter le titre et l'auteur plusieurs fois
-        augmented_text = f"{' '.join([title] * num_repetitions_title)} {' '.join([author] * num_repetitions_author)} " + content
-        
+        # Vérifier que 'authors' n'est pas vide avant d'effectuer l'opération
+        if book_info['authors']:
+            augmented_text = f"{' '.join([book_info['title']] * num_repetitions_title)} {' '.join([book_info['authors'][0]] * num_repetitions_author)} " + content
+        else:
+            # Si la liste 'authors' est vide, vous pouvez gérer autrement, ici on peut mettre un message par exemple
+            augmented_text = f"{' '.join([book_info['title']] * num_repetitions_title)} " + content  # Sans auteur
+
         # Créer un chemin temporaire pour le livre enrichi
         temp_book_path = os.path.join(temp_folder, os.path.basename(book_path))
         
@@ -86,12 +105,12 @@ for term in tfidf_df.columns:  # Parcours de chaque terme (colonne)
                 G[term] = set()  # Créer un ensemble pour ce terme
             
             # Ajouter le couple (nom_du_livre, tfidf_value) au terme
-            G[term].add((book, tfidf_value))
+            G[term].add((book, float(tfidf_value)))
 
 # Sauvegarder le dictionnaire G dans un fichier
 import pickle
 
-with open("indexing_table_advanced.pkl", "wb") as f:
+with open("utils/indexing_table_advanced.pkl", "wb") as f:
     pickle.dump(G, f)
 
 print("Dictionnaire G sauvegardé avec succès.")

@@ -44,7 +44,7 @@ def compute_jaccard_pair(pair):
 
 if __name__ == '__main__':
     # Charger les livres et leurs mots-clés
-    books_directory = 'books'
+    books_directory = 'myBooks'
     books_keywords = extract_keywords_from_books(books_directory)
 
     # Initialiser la matrice de distance Jaccard
@@ -52,7 +52,7 @@ if __name__ == '__main__':
     adjacency_df = {book1: {book2: 0 for book2 in book_list} for book1 in book_list}
 
     # Préparer les paires de livres pour le calcul
-    threshold = 0.3
+    threshold = 0.5
     pairs = [(book1, book2, books_keywords[book1], books_keywords[book2], threshold)
             for i, book1 in enumerate(book_list) for j, book2 in enumerate(book_list) if i < j]
 
@@ -69,7 +69,7 @@ if __name__ == '__main__':
                 adjacency_df[book2][book1] = distance  # Symétrie
 
     # Sauvegarder la matrice d'adjacence (distance Jaccard)
-    with open("adjacency_df_jaccard.pkl", "wb") as f:
+    with open("utils/adjacency_df_jaccard.pkl", "wb") as f:
         pickle.dump(adjacency_df, f)
 
     print("✅ Matrice d'adjacence (Jaccard) sauvegardée avec succès.")
