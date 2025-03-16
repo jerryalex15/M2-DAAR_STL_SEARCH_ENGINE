@@ -1,0 +1,28 @@
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 140px;
+}
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacement entre les éléments */
+}
+
+.form-fields {
+  display: flex;
+  flex-wrap: wrap; /* Pour permettre aux éléments de passer à la ligne si nécessaire */
+  gap: 20px; /* Espacement entre les champs du formulaire */
+}
+
+mat-form-field {
+  flex: 1 1 200px; /* Chaque champ prend un minimum de 200px mais peut s'étendre */
+  margin: 0; /* Enlever les marges par défaut */
+}
+
+button {
+  align-self: flex-start; /* Aligne le bouton à gauche */
+}

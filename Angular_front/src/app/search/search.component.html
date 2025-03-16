@@ -1,0 +1,41 @@
+<mat-toolbar>
+  <span>Search Engine</span>
+</mat-toolbar>
+
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="form-container">
+  <div class="form-fields">
+    <mat-form-field appearance="outline">
+      <mat-label>Mot-clé</mat-label>
+      <input matInput formControlName="keyword" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Pattern</mat-label>
+      <input matInput formControlName="pattern" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Centralité</mat-label>
+      <mat-select formControlName="centrality_type">
+        <mat-option value="closeness">Closeness</mat-option>
+        <mat-option value="betweenness">Betweenness</mat-option>
+        <mat-option value="pagerank">Page Rank</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Suggestions max</mat-label>
+      <input matInput type="number" formControlName="max_suggestions" />
+    </mat-form-field>
+  </div>
+
+  <button mat-fab extended color="primary" type="submit">
+    <mat-icon>search</mat-icon>
+    Rechercher
+  </button>
+</form>
+
+<div *ngIf="result">
+  <h3>Résultats :</h3>
+  <pre>{{ result | json }}</pre>
+</div>
