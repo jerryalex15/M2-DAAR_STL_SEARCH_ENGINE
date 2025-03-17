@@ -1,41 +1,123 @@
-<mat-toolbar>
-  <span>Search Engine</span>
-</mat-toolbar>
+<div class="body">
+  <mat-toolbar>
+    <span>Search Engine</span>
+  </mat-toolbar>
 
-<form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="form-container">
-  <div class="form-fields">
-    <mat-form-field appearance="outline">
-      <mat-label>Mot-clé</mat-label>
-      <input matInput formControlName="keyword" />
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Pattern</mat-label>
-      <input matInput formControlName="pattern" />
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Centralité</mat-label>
-      <mat-select formControlName="centrality_type">
-        <mat-option value="closeness">Closeness</mat-option>
-        <mat-option value="betweenness">Betweenness</mat-option>
-        <mat-option value="pagerank">Page Rank</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Suggestions max</mat-label>
-      <input matInput type="number" formControlName="max_suggestions" />
-    </mat-form-field>
+  <div class="toggle-container">
+    <div class="toggle-menu">
+      <span 
+        class="toggle-option" 
+        [class.active]="isKeywordSearch" 
+        (click)="setSearchType('keyword')">
+        Mot-clé
+      </span>
+      
+      <span class="divider">|</span>
+      
+      <span 
+        class="toggle-option" 
+        [class.active]="isRegexSearch" 
+        (click)="setSearchType('regex')">
+        Regex
+      </span>
+      
+      <span class="divider">|</span>
+      
+      <span 
+        class="toggle-option" 
+        [class.active]="isAdvancedKeywordSearch" 
+        (click)="setSearchType('advancedKeyword')">
+        Mot-clé avancé
+      </span>
+      
+      <span class="divider">|</span>
+      
+      <span 
+        class="toggle-option" 
+        [class.active]="isAdvancedRegexSearch" 
+        (click)="setSearchType('advancedRegex')">
+        Regex avancé
+      </span>
+    </div>
   </div>
 
-  <button mat-fab extended color="primary" type="submit">
-    <mat-icon>search</mat-icon>
-    Rechercher
-  </button>
-</form>
+  <form [formGroup]="searchForm" class="form-container">
+    <div class="form-fields">
+      <!-- Recherche Mot-clé simple -->
+      <mat-form-field appearance="outline" *ngIf="!isRegexSearch && !isAdvancedRegexSearch">
+        <mat-label>Mot-clé</mat-label>
+        <input matInput formControlName="keyword" />
+      </mat-form-field>
+  
+      <!-- Recherche Regex simple -->
+      <mat-form-field appearance="outline" *ngIf="!isKeywordSearch && !isAdvancedKeywordSearch">
+        <mat-label>Expression Regex</mat-label>
+        <input matInput formControlName="pattern" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" *ngIf="isAdvancedKeywordSearch || isAdvancedRegexSearch">
+        <mat-label>Centralité</mat-label>
+        <mat-select formControlName="centrality_type">
+          <mat-option value="closeness">Closeness</mat-option>
+          <mat-option value="betweenness">Betweenness</mat-option>
+          <mat-option value="pagerank">Page Rank</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" *ngIf="isAdvancedKeywordSearch || isAdvancedRegexSearch">
+        <mat-label>Suggestions max</mat-label>
+        <input matInput type="number" formControlName="max_suggestions" />
+      </mat-form-field>
+    </div>
+  
+    <!-- Bouton de recherche simple si c'est un mot-clé ou regex simple -->
+    <button *ngIf="isKeywordSearch || isRegexSearch" mat-raised-button color="primary" (click)="onSearch()">
+      Rechercher
+    </button>
+    
+    <!-- Bouton de recherche avancée si c'est un mot-clé avancé ou regex avancé -->
+    <button *ngIf="isAdvancedKeywordSearch || isAdvancedRegexSearch" mat-raised-button color="accent" (click)="onAdvancedSearch()">
+      Recherche avancée
+    </button>
+  </form>
+  
+  <div *ngIf="result.length > 0" class="result">
+    <h3>Résultats :</h3>
+    <mat-grid-list [cols]="gridCols" rowHeight="1:1">
+      <mat-grid-tile *ngFor="let item of result">
+        <mat-card class="result-card">
+          <mat-card-content>
+            <!-- Afficher l'image -->
+            <img [src]="item.image_url" alt="{{ item.title }}" class="result-image" />
 
-<div *ngIf="result">
-  <h3>Résultats :</h3>
-  <pre>{{ result | json }}</pre>
+            <!-- <p><strong>ID:</strong> {{ item.id }}</p> -->
+            <p><strong>Titre:</strong> 
+              <a [href]="item.text_url" target="_blank">{{ item.title }}</a>
+            </p>
+            <!-- Afficher l'auteur seulement si la liste des auteurs n'est pas vide -->
+            <p *ngIf="item.authors && item.authors.length > 0"><strong>Auteur:</strong> {{ item.authors.join(', ') }}</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div *ngIf="suggestions.length > 0" class="result">
+    <h3>Suggestions :</h3>
+    <mat-grid-list [cols]="gridCols" rowHeight="1:1">
+      <mat-grid-tile *ngFor="let suggestion of this.suggestions">
+        <mat-card class="result-card">
+          <mat-card-content>
+            <!-- Afficher l'image de suggestion -->
+            <img [src]="suggestion.image_url" alt="{{ suggestion.title }}" class="result-image" />
+            <p><strong>Titre:</strong> 
+              <a [href]="suggestion.text_url" target="_blank">{{ suggestion.title }}</a>
+            </p>
+            <p *ngIf="suggestion.authors && suggestion.authors.length > 0"><strong>Auteur:</strong> {{ suggestion.authors.join(', ') }}</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
 </div>

@@ -1,10 +1,19 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from utils.data_loader import load_index, load_adjacency_matrix, load_books_dict, compute_centrality_scores, get_books_by_ids
 from utils.search_functions import search_by_keyword, search_by_regex
 from utils.ranking import rank_documents_by_relevance
 from utils.suggestions import get_top_suggestions
+import re
 
 app = Flask(__name__)
+
+# Autoriser toutes les origines (développement)
+CORS(app)
+
+# Ou pour autoriser uniquement Angular (localhost:4200)
+# CORS(app, origins=["http://localhost:4200"])
+
 
 # Chargement des données
 G_loaded = load_index("utils/indexing_table_advanced.pkl")
