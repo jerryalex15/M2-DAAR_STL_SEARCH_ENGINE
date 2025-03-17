@@ -8,12 +8,8 @@ import re
 
 app = Flask(__name__)
 
-# Autoriser toutes les origines (développement)
-CORS(app)
-
-# Ou pour autoriser uniquement Angular (localhost:4200)
-# CORS(app, origins=["http://localhost:4200"])
-
+# Autorise CORS pour Angular (localhost:4200)
+CORS(app, resources={r"/*": {"origins": "http://localhost:4200", "methods": ["GET", "POST", "OPTIONS"], "allow_headers": ["Content-Type"]}})
 
 # Chargement des données
 G_loaded = load_index("utils/indexing_table_advanced.pkl")
@@ -75,4 +71,4 @@ def rank_and_suggest():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)

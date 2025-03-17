@@ -72,11 +72,13 @@
   
     <!-- Bouton de recherche simple si c'est un mot-clé ou regex simple -->
     <button *ngIf="isKeywordSearch || isRegexSearch" mat-raised-button color="primary" (click)="onSearch()">
+      <mat-icon>search</mat-icon>
       Rechercher
     </button>
     
     <!-- Bouton de recherche avancée si c'est un mot-clé avancé ou regex avancé -->
     <button *ngIf="isAdvancedKeywordSearch || isAdvancedRegexSearch" mat-raised-button color="accent" (click)="onAdvancedSearch()">
+      <mat-icon>search</mat-icon>
       Recherche avancée
     </button>
   </form>
