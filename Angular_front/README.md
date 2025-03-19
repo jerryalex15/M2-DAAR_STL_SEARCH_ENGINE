@@ -10,7 +10,7 @@ To start a local development server, run:
 ng serve --host 0.0.0.0 --port 4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/` or with your remote device to the address `http://{you_address:4200}`
+Once the server is running, open your browser and navigate to `http://localhost:4200/` or with your remote device to the address `http://{you_address}:4200`
 
 ## Note
 
