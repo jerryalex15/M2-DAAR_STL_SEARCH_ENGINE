@@ -28,14 +28,14 @@ print(f"Le nombre total d'arêtes créées est : {total_edges}")
 plt.figure(figsize=(10, 10))
 
 # Dessiner le graphe
-pos = nx.spring_layout(G, k=0.15, iterations=20)  # Positionnement des nœuds
-nx.draw_networkx_nodes(G, pos, node_size=1000, node_color='lightblue')
+pos = nx.spring_layout(G, k=0.5, iterations=20)  # Positionnement des nœuds
+nx.draw_networkx_nodes(G, pos, node_size=10, node_color='lightblue')
 nx.draw_networkx_edges(G, pos, width=1.0, alpha=0.7)
-nx.draw_networkx_labels(G, pos, font_size=10, font_weight='bold')
+#nx.draw_networkx_labels(G, pos, font_size=10, font_weight='bold')
 
 # Afficher les étiquettes des arêtes (distances Jaccard)
-edge_labels = nx.get_edge_attributes(G, 'weight')
-nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
+# edge_labels = nx.get_edge_attributes(G, 'weight')
+# nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
 
 # Afficher le graphe
 plt.title("Graph des livres avec leurs distances Jaccard")
