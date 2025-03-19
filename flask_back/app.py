@@ -9,9 +9,10 @@ import re
 app = Flask(__name__)
 
 # Autorise CORS pour Angular (localhost:4200)
-CORS(app, resources={r"/*": {"origins": r"http://192\.168\.\d{1,3}\.\d{1,3}:\d{4,5}|http://localhost:\d{4,5}", 
-        "methods": ["GET", "POST", "OPTIONS"], 
-        "allow_headers": ["Content-Type"]}})
+# Activer CORS pour toutes les origines
+CORS(app, resources={r"/*": {"origins": "*", 
+                            "methods": ["GET", "POST", "OPTIONS"], 
+                            "allow_headers": ["Content-Type"]}})
 # Chargement des données
 G_loaded = load_index("utils/indexing_table_advanced.pkl")
 adjacency_df = load_adjacency_matrix("utils/adjacency_df_jaccard.pkl")
