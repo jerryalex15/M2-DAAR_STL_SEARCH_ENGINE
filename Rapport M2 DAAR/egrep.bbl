@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{ndfa_a}
+Nandraina RAZAFINDRAIBE.
+\newblock Automate fini non déterministe de "a", 2024.
+\newblock Réalisé avec draw.io.
+
+\bibitem{ndfa_tab_a}
+Nandraina RAZAFINDRAIBE.
+\newblock Représentation de l'afnd de "a", 2024.
+\newblock Réalisé avec draw.io.
+
+\bibitem{ndfa_b}
+Nandraina RAZAFINDRAIBE.
+\newblock Automate fini non déterministe de "b", 2024.
+\newblock Réalisé avec draw.io.
+
+\bibitem{ndfa_tab_b}
+Nandraina RAZAFINDRAIBE.
+\newblock Représentation de l'afnd de "b", 2024.
+\newblock Réalisé avec draw.io.
+
+\bibitem{ndfa_ab}
+Nandraina RAZAFINDRAIBE.
+\newblock Automate fini non déterministe de "ab", 2024.
+\newblock Réalisé avec draw.io.
+
+\bibitem{ndfa_tab_ab}
+Nandraina RAZAFINDRAIBE.
+\newblock Représentation de l'afnd de "ab", 2024.
+\newblock Réalisé avec draw.io.
+
+\end{thebibliography}
