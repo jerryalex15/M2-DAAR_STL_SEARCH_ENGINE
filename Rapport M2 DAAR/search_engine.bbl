@@ -1,0 +1,63 @@
+\begin{thebibliography}{10}
+
+\bibitem{gutenberg}
+{Project Gutenberg}.
+\newblock Project gutenberg - free ebooks, 2024.
+\newblock Consulté le 12 mars 2025.
+
+\bibitem{scikitlearn}
+Scikit learn Developers.
+\newblock \newblock \texttt{sklearn TfidfVectorizer}, 2024., 2024.
+\newblock Consult\'e le 12 mars 2025.
+
+\bibitem{coursrechercheinfo}
+Binh-Minh Bui-Xuan.
+\newblock D\'eveloppement des algorithmes d’application r\'eticulaire: Supports de cours, 2024.
+\newblock Consult\'e dans le cadre du projet.
+
+\bibitem{networkx}
+NetworkX Developers.
+\newblock Networkx centrality algorithms, 2024.
+\newblock Consulté le 12 mars 2025.
+
+\bibitem{lecroq1992variation}
+Thierry Lecroq.
+\newblock A variation on the boyer-moore algorithm.
+\newblock {\em Theoretical Computer Science}, 92(1):119--144, 1992.
+
+\bibitem{aho1992foundations}
+Alfred~V Aho and Jeffrey~D Ullman.
+\newblock {\em Foundations of computer science}.
+\newblock Computer Science Press, Inc., 1992.
+
+\bibitem{kleene1951representationof}
+Stephen~Cole Kleene.
+\newblock Representationof events in nerve nets and finite automata.
+\newblock {\em CE Shannon and J. McCarthy}, 1951.
+
+\bibitem{schemaAutomate}
+Razafindraibe Nandraina.
+\newblock Automate, 2025.
+\newblock R\'ealis\'e dans le cadre du projet.
+
+\bibitem{lee2000measures}
+Lillian Lee.
+\newblock Measures of distributional similarity.
+\newblock {\em arXiv preprint cs/0001012}, 2000.
+
+\bibitem{wasserman1994social}
+Stanley Wasserman and Katherine Faust.
+\newblock Social network analysis: Methods and applications.
+\newblock 1994.
+
+\bibitem{freeman1977set}
+Linton~C Freeman.
+\newblock A set of measures of centrality based on betweenness.
+\newblock {\em Sociometry}, pages 35--41, 1977.
+
+\bibitem{brin1998anatomy}
+Sergey Brin and Lawrence Page.
+\newblock The anatomy of a large-scale hypertextual web search engine.
+\newblock {\em Computer networks and ISDN systems}, 30(1-7):107--117, 1998.
+
+\end{thebibliography}

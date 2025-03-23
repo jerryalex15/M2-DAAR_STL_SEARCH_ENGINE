@@ -1,0 +1,15 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{1}{}%
+\contentsline {section}{\numberline {2}Définition de problème et structures de données utilisées}{1}{}%
+\contentsline {subsection}{\numberline {2.1}Définition du Problème de Recherche d'Information}{1}{}%
+\contentsline {subsection}{\numberline {2.2}Stockage et Indexation des Documents}{1}{}%
+\contentsline {subsection}{\numberline {2.3}Graphes de Jaccard et similarité documentaire}{2}{}%
+\contentsline {subsection}{\numberline {2.4}Indices de centralité et classement des résultats}{2}{}%
+\contentsline {section}{\numberline {3}Présentation théorique des algorithmes}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Algorithme de Knuth-Morris-Pratt (KMP)}{2}{}%
+\contentsline {subsection}{\numberline {3.2}Algorithme d’Aho-Ullman}{3}{}%
+\contentsline {subsection}{\numberline {3.3} Mesure de Similarité de Jaccard}{4}{}%
+\contentsline {subsection}{\numberline {3.4} Closeness Centrality }{5}{}%
+\contentsline {subsection}{\numberline {3.5} Betweenness Centrality }{5}{}%
+\contentsline {subsection}{\numberline {3.6} PageRank Centrality }{5}{}%
+\contentsline {section}{\numberline {4}Conclusion}{7}{}%
