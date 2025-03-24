@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.20)  23 MAR 2025 16:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.20)  23 MAR 2025 20:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -127,41 +127,60 @@ Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@posthook=\toks24
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen153
+\lightrulewidth=\dimen154
+\cmidrulewidth=\dimen155
+\belowrulesep=\dimen156
+\belowbottomsep=\dimen157
+\aboverulesep=\dimen158
+\abovetopsep=\dimen159
+\cmidrulesep=\dimen160
+\cmidrulekern=\dimen161
+\defaultaddspace=\dimen162
+\@cmidla=\count282
+\@cmidlb=\count283
+\@aboverulesep=\dimen163
+\@belowrulesep=\dimen164
+\@thisruleclass=\count284
+\@lastruleclass=\count285
+\@thisrulewidth=\dimen165
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2025/02/14 v25.4 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
-\babel@savecnt=\count282
-\U@D=\dimen153
+\babel@savecnt=\count286
+\U@D=\dimen166
 \l@unhyphenated=\language90
  (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count283
+\bbl@dirlevel=\count287
  (/usr/local/texlive/2025/texmf-dist/tex/generic/babel-french/french.ldf
 Language: french 2024-07-25 v3.6c French support from the babel system
 Package babel Info: Hyphen rules for 'acadian' set to \l@french
 (babel)             (\language30). Reported on input line 91.
 Package babel Info: Hyphen rules for 'canadien' set to \l@french
 (babel)             (\language30). Reported on input line 92.
-\FB@stdchar=\count284
+\FB@stdchar=\count288
 Package babel Info: Making : an active character on input line 421.
 Package babel Info: Making ; an active character on input line 422.
 Package babel Info: Making ! an active character on input line 423.
 Package babel Info: Making ? an active character on input line 424.
-\FBguill@level=\count285
+\FBguill@level=\count289
 \FBold@everypar=\toks25
-\FB@Mht=\dimen154
-\mc@charclass=\count286
-\mc@charfam=\count287
-\mc@charslot=\count288
-\std@mcc=\count289
-\dec@mcc=\count290
-\FB@parskip=\dimen155
-\listindentFB=\dimen156
-\descindentFB=\dimen157
-\labelindentFB=\dimen158
-\labelwidthFB=\dimen159
-\leftmarginFB=\dimen160
-\parindentFFN=\dimen161
-\FBfnindent=\dimen162
+\FB@Mht=\dimen167
+\mc@charclass=\count290
+\mc@charfam=\count291
+\mc@charslot=\count292
+\std@mcc=\count293
+\dec@mcc=\count294
+\FB@parskip=\dimen168
+\listindentFB=\dimen169
+\descindentFB=\dimen170
+\labelindentFB=\dimen171
+\labelwidthFB=\dimen172
+\leftmarginFB=\dimen173
+\parindentFFN=\dimen174
+\FBfnindent=\dimen175
 )) (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/fr/babel-french.tex
 Package babel Info: Importing font and identification data for french
 (babel)             from babel-fr.ini. Reported on input line 11.
@@ -172,12 +191,12 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box54
 \beforetitleunit=\skip54
 \aftertitleunit=\skip55
-\ttl@plus=\dimen163
-\ttl@minus=\dimen164
+\ttl@plus=\dimen176
+\ttl@minus=\dimen177
 \ttl@toksa=\toks26
-\titlewidth=\dimen165
-\titlewidthlast=\dimen166
-\titlewidthfirst=\dimen167
+\titlewidth=\dimen178
+\titlewidthlast=\dimen179
+\titlewidthfirst=\dimen180
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -200,14 +219,14 @@ Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip70
-\enit@outerparindent=\dimen168
+\enit@outerparindent=\dimen181
 \enit@toks=\toks27
 \enit@inbox=\box55
-\enit@count@id=\count291
-\enitdp@description=\count292
+\enit@count@id=\count295
+\enitdp@description=\count296
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count293
+\c@float@type=\count297
 \float@exts=\toks28
 \float@box=\box56
 \@float@everytoks=\toks29
@@ -219,55 +238,55 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count294
-\Gm@cntv=\count295
-\c@Gm@tempcnt=\count296
-\Gm@bindingoffset=\dimen169
-\Gm@wd@mp=\dimen170
-\Gm@odd@mp=\dimen171
-\Gm@even@mp=\dimen172
-\Gm@layoutwidth=\dimen173
-\Gm@layoutheight=\dimen174
-\Gm@layouthoffset=\dimen175
-\Gm@layoutvoffset=\dimen176
+\Gm@cnth=\count298
+\Gm@cntv=\count299
+\c@Gm@tempcnt=\count300
+\Gm@bindingoffset=\dimen182
+\Gm@wd@mp=\dimen183
+\Gm@odd@mp=\dimen184
+\Gm@even@mp=\dimen185
+\Gm@layoutwidth=\dimen186
+\Gm@layoutheight=\dimen187
+\Gm@layouthoffset=\dimen188
+\Gm@layoutvoffset=\dimen189
 \Gm@dimlist=\toks30
 )
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 21.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 22.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count297
+\l__color_backend_stack_int=\count301
 \l__pdf_internal_box=\box58
 ) (./search_engine.aux)
 \openout1 = `search_engine.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count298
-\scratchdimen=\dimen177
+\scratchcounter=\count302
+\scratchdimen=\dimen190
 \scratchbox=\box59
-\nofMPsegments=\count299
-\nofMParguments=\count300
+\nofMPsegments=\count303
+\nofMParguments=\count304
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count301
-\MPscratchDim=\dimen178
-\MPnumerator=\count302
-\makeMPintoPDFobject=\count303
+\MPscratchCnt=\count305
+\MPscratchDim=\dimen191
+\MPnumerator=\count306
+\makeMPintoPDFobject=\count307
 \everyMPtoPDFconversion=\toks32
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -275,14 +294,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Redefining \degres on input line 21.
+LaTeX Info: Redefining \degres on input line 22.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 21.
+(french.ldf)             reported on input line 22.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 21.
-LaTeX Info: Redefining \up on input line 21.
+(french.ldf)             reported on input line 22.
+LaTeX Info: Redefining \up on input line 22.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -321,7 +340,7 @@ LaTeX Info: Redefining \up on input line 21.
 <ressources/logoSorbonne.png, id=1, 354.32375pt x 143.53625pt>
 File: ressources/logoSorbonne.png Graphic file (type png)
 <use ressources/logoSorbonne.png>
-Package pdftex.def Info: ressources/logoSorbonne.png  used on input line 25.
+Package pdftex.def Info: ressources/logoSorbonne.png  used on input line 26.
 (pdftex.def)             Requested size: 182.09486pt x 73.76758pt.
 
 
@@ -341,12 +360,12 @@ Package pdftex.def Info: ressources/logoSorbonne.png  used on input line 25.
 <./ressources/NDFA.drawio.png, id=28, 584.1825pt x 263.98625pt>
 File: ./ressources/NDFA.drawio.png Graphic file (type png)
 <use ./ressources/NDFA.drawio.png>
-Package pdftex.def Info: ./ressources/NDFA.drawio.png  used on input line 149.
+Package pdftex.def Info: ./ressources/NDFA.drawio.png  used on input line 150.
 (pdftex.def)             Requested size: 341.43307pt x 154.29639pt.
 <./ressources/DFA.drawio.png, id=30, 423.5825pt x 105.39375pt>
 File: ./ressources/DFA.drawio.png Graphic file (type png)
 <use ./ressources/DFA.drawio.png>
-Package pdftex.def Info: ./ressources/DFA.drawio.png  used on input line 162.
+Package pdftex.def Info: ./ressources/DFA.drawio.png  used on input line 163.
 (pdftex.def)             Requested size: 227.62206pt x 56.63516pt.
 
 
@@ -354,37 +373,44 @@ Package pdftex.def Info: ./ressources/DFA.drawio.png  used on input line 162.
 <./ressources/DFA_optimized.drawio.png, id=35, 272.01625pt x 131.49126pt>
 File: ./ressources/DFA_optimized.drawio.png Graphic file (type png)
 <use ./ressources/DFA_optimized.drawio.png>
-Package pdftex.def Info: ./ressources/DFA_optimized.drawio.png  used on input line 176.
+Package pdftex.def Info: ./ressources/DFA_optimized.drawio.png  used on input line 177.
 (pdftex.def)             Requested size: 159.33821pt x 77.02739pt.
+<./ressources/Jaccard_graph.png, id=36, 531.1845pt x 506.6127pt>
+File: ./ressources/Jaccard_graph.png Graphic file (type png)
+<use ./ressources/Jaccard_graph.png>
+Package pdftex.def Info: ./ressources/Jaccard_graph.png  used on input line 207.
+(pdftex.def)             Requested size: 295.90588pt x 282.22469pt.
 
 
 [4 <./ressources/DFA.drawio.png> <./ressources/DFA_optimized.drawio.png>]
 
-[5]
+[5 <./ressources/Jaccard_graph.png>]
 
 [6]
 
-[7] (./search_engine.bbl)
+[7]
 
-[8] (./search_engine.aux)
+[8] (./search_engine.bbl)
+
+[9] (./search_engine.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6257 strings out of 473190
- 102052 string characters out of 5715800
- 530526 words of memory out of 5000000
- 29445 multiletter control sequences out of 15000+600000
+ 6345 strings out of 473190
+ 103677 string characters out of 5715800
+ 531491 words of memory out of 5000000
+ 29529 multiletter control sequences out of 15000+600000
  599221 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,10n,65p,905b,428s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on search_engine.pdf (10 pages, 178007 bytes).
+Output written on search_engine.pdf (11 pages, 355356 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 107 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,6 @@
+Regex Pattern,Execution Time (s),Number of Books Returned
+Sar.*(on)$,0.20001983642578125,106
+^Clin.*on$,0.1770780086517334,84
+baby.*n$,0.1963052749633789,368
+ki.*s$,0.21634483337402344,1648
+\b[a-zA-Z]{20}\b,0.16650390625,100

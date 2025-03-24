@@ -47,6 +47,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/babel/txtbabel.def
@@ -157,6 +159,11 @@ INPUT ./ressources/DFA_optimized.drawio.png
 INPUT ./ressources/DFA_optimized.drawio.png
 INPUT ./ressources/DFA_optimized.drawio.png
 INPUT ./ressources/DFA_optimized.drawio.png
+INPUT ./ressources/Jaccard_graph.png
+INPUT ./ressources/Jaccard_graph.png
+INPUT ./ressources/Jaccard_graph.png
+INPUT ./ressources/Jaccard_graph.png
+INPUT ./ressources/Jaccard_graph.png
 INPUT ./search_engine.bbl
 INPUT ./search_engine.bbl
 INPUT search_engine.bbl

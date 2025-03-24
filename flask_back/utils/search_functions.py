@@ -16,7 +16,8 @@ def search_by_regex(pattern, G):
                 if doc not in results or results[doc] < tfidf:
                     results[doc] = tfidf
 
-    # Limiter les résultats aux 50 premiers éléments (par tfidf)
-    top_results = heapq.nlargest(50, results.items(), key=lambda x: x[1])
+    return results
+    # # Limiter les résultats aux 50 premiers éléments (par tfidf)
+    # top_results = heapq.nlargest(50, results.items(), key=lambda x: x[1])
     
-    return top_results
+    # return top_results

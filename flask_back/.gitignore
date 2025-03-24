@@ -5,3 +5,7 @@
 __pycache__/
 myBooks
 search_script.py
+read_csv.py
+get_centrality.py
+top_common_nodes.csv
+*.tex

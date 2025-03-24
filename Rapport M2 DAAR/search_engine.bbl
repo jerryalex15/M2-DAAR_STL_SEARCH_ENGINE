@@ -40,6 +40,11 @@ Razafindraibe Nandraina.
 \newblock Automate, 2025.
 \newblock R\'ealis\'e dans le cadre du projet.
 
+\bibitem{graphJaccard}
+Razafindraibe Nandraina.
+\newblock Graphe de jaccard, networkx, 2025.
+\newblock R\'ealis\'e dans le cadre du projet.
+
 \bibitem{lee2000measures}
 Lillian Lee.
 \newblock Measures of distributional similarity.
@@ -59,5 +64,10 @@ Linton~C Freeman.
 Sergey Brin and Lawrence Page.
 \newblock The anatomy of a large-scale hypertextual web search engine.
 \newblock {\em Computer networks and ISDN systems}, 30(1-7):107--117, 1998.
+
+\bibitem{tableauCentralite}
+Razafindraibe Nandraina.
+\newblock Indice de centralité, 2025.
+\newblock R\'ealis\'e dans le cadre du projet.
 
 \end{thebibliography}

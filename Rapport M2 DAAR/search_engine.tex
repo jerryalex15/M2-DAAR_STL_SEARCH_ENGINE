@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{booktabs}
 \renewcommand{\rmdefault}{ptm}
 \renewcommand{\sfdefault}{ptm}
 \renewcommand{\ttdefault}{ptm}
@@ -180,7 +181,7 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
         \end{figure}
     \end{itemize}
 
-    \subsection{ Mesure de Similarité de Jaccard}
+    \subsection{ Mesure de Similarité  et graphe de Jaccard}
     La mesure de similarité de Jaccard est utilisée pour comparer deux ensembles et déterminer leur degré de ressemblance. Elle est particulièrement utilisée dans l’analyse de texte, la classification de documents, et la détection de similarité entre corpus textuels ou ensembles de données.	
     
     Soient \( A \) et \( B \) deux ensembles représentant respectivement les termes présents dans les documents \( D_A \) et \( D_B \).
@@ -197,6 +198,18 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
 
     Cette distance varie entre 0 et 1. Lorsque \( d_J(A, B) = 0 \), les ensembles sont identiques. À l'inverse, si \( d_J(A, B) = 1 \), cela signifie que les ensembles sont totalement différents et n'ont aucune intersection.
 
+    Le graphe de Jaccard est obtenu en calculant la distance de Jaccard entre les livres pris deux à deux. Les résultats forment ensuite la matrice d’adjacence de Jaccard, permettant ainsi de représenter le graphe.
+    La liaison entre les nœuds est établie si les deux sont assez similaires. Dans le projet, nous avons fixé le seuil de similarité à 0.5. Ce seuil a été choisi de manière à ce que seules les paires de livres présentant une similarité modérée ou élevée soient connectées. En effet, une distance de Jaccard de 0 indique que les deux livres sont identiques, 
+    tandis qu’une distance de 1 signifie qu’ils ne partagent aucun terme en commun. En fixant le seuil à 0.5, nous garantissons que les livres ayant une similarité plus significative sont reliés, ce qui permet de mieux représenter les relations entre les livres dans le graphe de Jaccard (voir Figure~\ref{fig:graphJaccard}). Cela permet d’éviter une trop grande dispersion des liens et de maintenir une pertinence dans les connexions formées.  
+    Avec ce seuil, nous obtenons 123 connexions, soit 123 arêtes, chacune pondérée par la distance de Jaccard inférieure à 0.5.
+    \begin{figure}[H] % Utilisation de l'option [h] pour placer l'image ici
+        \centering
+        \includegraphics[width=0.65\textwidth]{./ressources/Jaccard_graph.png}
+        \caption{Graphe de Jaccard avec 123 arêtes}
+        \cite{graphJaccard}
+        \label{fig:graphJaccard}
+    \end{figure}
+
     Il en existe d’autres mesures de similarité comme \textit{Cosinus} et \textit{Dice}. La similarité cosinus est utilisée pour mesurer la proximité angulaire entre deux vecteurs représentant des documents. Contrairement à Jaccard, elle prend en compte les fréquences des termes. Elle est adaptée aux documents longs avec pondération TF-IDF mais ne distingue pas les mots rares des mots fréquents.
     
     Soient \( A \) et \( B \) deux vecteurs représentant des documents dans un espace de dimension \( n \), où chaque dimension correspond à un terme du vocabulaire. Les composantes de ces vecteurs sont les scores TF-IDF des termes présents dans les documents.
@@ -207,6 +220,8 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
     \]
 
     où \( A = (A_1, A_2, \dots, A_n) \) et \( B = (B_1, B_2, \dots, B_n) \) sont les vecteurs TF-IDF des documents.
+
+
 
     La similarité de Dice est une variante de Jaccard avec un poids supplémentaire sur les éléments communs. Dice est plus sensible aux petits ensembles mais moins interprétable que Jaccard sur de grands corpus.
     
@@ -257,6 +272,45 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
     Le score de hub, qui mesure la capacité d’un document à orienter vers des ressources pertinentes.
     Cette distinction permet d’identifier à la fois les documents de référence riches en contenu (autorités) et ceux qui jouent un rôle d’aiguillage vers des informations importantes (hubs). Toutefois, cette sophistication implique une complexité de calcul plus élevée et une stabilité moindre par rapport aux approches comme \textit{PageRank}.
 
+    On peut voir dans le tableau ci-dessous (voir Table~\ref{tab:centrality}) un extrait des indices de centralité de notre graphe d’adjacence. Pour rappel, les nœuds représentent les livres.    
+    \begin{table}[H] % Utilisation de l'option [h] pour placer le tableau ici
+        \centering
+        \begin{tabular}{lrrr}
+            \toprule
+            Node & Betweenness & Closeness & PageRank \\
+            \midrule
+            766.txt & 0.000136 & 0.029896 & 0.007640 \\
+            917.txt & 0.000227 & 0.032886 & 0.007460 \\
+            968.txt & 0.000136 & 0.032886 & 0.007348 \\
+            52521.txt & 0.000045 & 0.021477 & 0.006839 \\
+            996.txt & 0.000091 & 0.013423 & 0.009737 \\
+            141.txt & 0.000091 & 0.013423 & 0.009737 \\
+            2591.txt & 0.000181 & 0.026846 & 0.009276 \\
+            821.txt & 0.000816 & 0.041107 & 0.010865 \\
+            967.txt & 0.000227 & 0.032886 & 0.007497 \\
+            19068.txt & 0.000045 & 0.021477 & 0.007204 \\
+            20.txt & 0.000091 & 0.013423 & 0.009737 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Extrait des résultats des indices de centralité pour 12 livres.}
+        \cite{tableauCentralite}
+        \label{tab:centrality} % La référence au tableau sera ici
+    \end{table}
+    Le livre 821.txt se distingue comme étant le plus central dans le graphe, avec des valeurs élevées dans les trois indices de centralité : betweenness, closeness et PageRank. Cela suggère qu’il joue un rôle clé dans le réseau, agissant comme un médiateur entre d’autres livres, pouvant atteindre rapidement tous les autres livres et étant influencé par des livres importants. En revanche, les livres avec des indices plus faibles, comme 52521.txt ou 19068.txt, sont moins centraux et influents dans le graphe.
+\section{Partie test : obtention des testbeds}
+    \subsection{Jeux de données utilisés}
+    Nous avons utilisé un jeu de données constitué de 1664 livres provenant de Gutenberg.org, une bibliothèque numérique contenant des livres du domaine public. Ces livres sont disponibles dans des fichiers texte brut, ce qui nous permet de les analyser directement. Nous avons spécifiquement sélectionné uniquement des livres en anglais, ce qui a facilité le traitement, notamment en évitant la gestion de caractères spéciaux dans d’autres langues. De plus, nous avons choisi uniquement les livres contenant plus de 10 000 caractères afin d’assurer une taille suffisante pour une analyse pertinente.
+
+    \subsection{Jeux de données utilisés}
+    Les fichiers utilisés proviennent du site Project Gutenberg \cite{gutenberg}, qui propose une vaste collection de livres gratuits et accessibles. Nous avons extrait ces livres via l’API de Gutendex (https://www.gutendex.org/), qui, en plus du texte brut, nous fournit les métadonnées associées à chaque livre (ID, auteur, titre, langue, image, etc.). Un script Python a été développé pour automatiser le téléchargement des livres en interrogeant l’API. Chaque fichier est au format texte brut, ce qui simplifie grandement leur traitement.
+
+    \subsection{Prétraitement des données}
+    Avant d’utiliser les textes pour l’analyse, nous avons appliqué plusieurs étapes de prétraitement :
+    \begin{itemize}
+        \item \textit{Tokenisation :} Nous avons utilisé la bibliothèque \textit{NLTK} pour tokeniser les textes et obtenir une liste de mots à partir de chaque livre. Cette bibliothèque est notamment utilisée lors de la construction du graphe de Jaccard. Lors de la construction de la table d’index, la méthode \textit{TfidfVectorizer} intègre déjà un tokenizeur de texte.
+        \item \textit{Nettoyage : }Le texte brut a été nettoyé en supprimant les caractères spéciaux, en convertissant tous les mots en minuscules et en éliminant les mots de moins de 3 caractères. Les mots ainsi retenus sont stockés dans une liste. Dans le calcul de la similarité de Jaccard, ces mots sont placés dans un ensemble (\textit{set}) de Python.
+        \item \textit{Suppression des stopwords :} Nous avons utilisé la liste de stopwords fournie par la bibliothèque python \textit{NLTK} pour éliminer les mots courants qui n’apportent pas d’information pertinente. Cela permet de se concentrer sur les mots significatifs dans chaque texte.
+    \end{itemize}
 \newpage
 \section{Conclusion}
 

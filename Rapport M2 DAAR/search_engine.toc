@@ -8,8 +8,12 @@
 \contentsline {section}{\numberline {3}Présentation théorique des algorithmes}{2}{}%
 \contentsline {subsection}{\numberline {3.1}Algorithme de Knuth-Morris-Pratt (KMP)}{2}{}%
 \contentsline {subsection}{\numberline {3.2}Algorithme d’Aho-Ullman}{3}{}%
-\contentsline {subsection}{\numberline {3.3} Mesure de Similarité de Jaccard}{4}{}%
+\contentsline {subsection}{\numberline {3.3} Mesure de Similarité et graphe de Jaccard}{4}{}%
 \contentsline {subsection}{\numberline {3.4} Closeness Centrality }{5}{}%
-\contentsline {subsection}{\numberline {3.5} Betweenness Centrality }{5}{}%
-\contentsline {subsection}{\numberline {3.6} PageRank Centrality }{5}{}%
-\contentsline {section}{\numberline {4}Conclusion}{7}{}%
+\contentsline {subsection}{\numberline {3.5} Betweenness Centrality }{6}{}%
+\contentsline {subsection}{\numberline {3.6} PageRank Centrality }{6}{}%
+\contentsline {section}{\numberline {4}Partie test : obtention des testbeds}{7}{}%
+\contentsline {subsection}{\numberline {4.1}Jeux de données utilisés}{7}{}%
+\contentsline {subsection}{\numberline {4.2}Jeux de données utilisés}{7}{}%
+\contentsline {subsection}{\numberline {4.3}Prétraitement des données}{7}{}%
+\contentsline {section}{\numberline {5}Conclusion}{8}{}%

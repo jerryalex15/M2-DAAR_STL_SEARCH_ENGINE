@@ -21,10 +21,6 @@ def load_books_dict(file_path):
         return pickle.load(f)
 
 def compute_centrality_scores(adjacency_matrix, filename="utils/centrality.pkl"):
-    """
-    Charge les scores de centralité depuis un fichier s'il existe, 
-    sinon les calcule et les stocke.
-    """
     # Vérifier si le fichier existe
     if os.path.exists(filename):
         with open(filename, "rb") as f:
@@ -105,15 +101,6 @@ def rank_documents_by_relevance(results, centrality_scores, centrality_type="pag
     return sorted(ranked_results, key=lambda x: x[1], reverse=True)
 
 def get_top_suggestions(top_results, adjacency_matrix, max_suggestions=10):
-    """
-    Récupère les 3 premiers voisins des 3 meilleurs résultats.
-    Si on n'a pas assez de suggestions, on prend le 4ᵉ, puis le 5ᵉ, etc.
-
-    :param top_results: Liste des (document, score) classés par pertinence.
-    :param adjacency_matrix: Matrice d'adjacence (graphe de Jaccard).
-    :param max_suggestions: Nombre maximal de suggestions à retourner.
-    :return: Liste des suggestions uniques.
-    """
     suggestions = set()  # Utilisation d'un set pour éviter les doublons
     visited_results = set(doc for doc, _ in top_results)  # On garde les résultats à exclure
     
@@ -128,19 +115,6 @@ def get_top_suggestions(top_results, adjacency_matrix, max_suggestions=10):
                     return list(suggestions)
 
     return list(suggestions)
-
-# # Exemple d'utilisation
-# keyword_results = search_by_keyword("sargon", G_loaded)
-# regex_results = search_by_regex(r"sarg.*", G_loaded)
-
-# centrality_ranked_results = rank_documents_by_relevance(keyword_results, centrality_scores, "closeness")
-
-# print("regex_results:", get_books_by_ids(regex_results, books_dict))
-
-# # Exemple d'utilisation
-# suggestions = get_top_suggestions(centrality_ranked_results, adjacency_df, 10)
-# print("Suggestions:", get_books_by_ids(suggestions, books_dict))
-
 
 @app.route('/search_by_keyword', methods=['POST'])
 def search_by_keyword_route():
