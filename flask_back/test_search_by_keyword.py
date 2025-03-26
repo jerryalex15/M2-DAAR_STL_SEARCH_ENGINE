@@ -4,7 +4,6 @@ import os
 import sys
 
 
-
 from utils.data_loader import load_index, load_adjacency_matrix, load_books_dict, compute_centrality_scores, get_books_by_ids
 from utils.search_functions import search_by_keyword, search_by_regex
 from utils.ranking import rank_documents_by_relevance
@@ -20,7 +19,7 @@ centrality_scores = compute_centrality_scores(adjacency_df)
 keywords = ["Sargon", "Lewis", "babylon", "network", "king"]
 
 # Fichier CSV où nous allons enregistrer les résultats
-output_csv = "search_times.csv"
+output_csv = "search_times_keyword.csv"
 
 def test_search_by_keywords():
     # Créer ou ouvrir le fichier CSV pour sauvegarder les résultats

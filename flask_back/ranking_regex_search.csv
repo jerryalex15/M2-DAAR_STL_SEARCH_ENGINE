@@ -1,0 +1,6 @@
+Query,Execution Time (s),"Number of Books Returned, Number of suggestions"
+Sar.*(on)$,0.2067251205444336,106,100
+^Clin.*on$,0.1868910789489746,84,100
+baby.*n$,0.2046949863433838,368,100
+ki.*s$,0.2814180850982666,1648,16
+\b[a-zA-Z]{20}\b,0.16882705688476562,100,100

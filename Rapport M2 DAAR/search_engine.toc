@@ -2,18 +2,24 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{}%
 \contentsline {section}{\numberline {2}Définition de problème et structures de données utilisées}{1}{}%
 \contentsline {subsection}{\numberline {2.1}Définition du Problème de Recherche d'Information}{1}{}%
-\contentsline {subsection}{\numberline {2.2}Stockage et Indexation des Documents}{1}{}%
-\contentsline {subsection}{\numberline {2.3}Graphes de Jaccard et similarité documentaire}{2}{}%
-\contentsline {subsection}{\numberline {2.4}Indices de centralité et classement des résultats}{2}{}%
-\contentsline {section}{\numberline {3}Présentation théorique des algorithmes}{2}{}%
-\contentsline {subsection}{\numberline {3.1}Algorithme de Knuth-Morris-Pratt (KMP)}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Choix des technologies pour le moteur de recherche}{1}{}%
+\contentsline {subsection}{\numberline {2.3}Stockage et Indexation des Documents}{1}{}%
+\contentsline {subsection}{\numberline {2.4}Graphes de Jaccard et similarité documentaire}{2}{}%
+\contentsline {subsection}{\numberline {2.5}Indices de centralité et classement des résultats}{2}{}%
+\contentsline {subsection}{\numberline {2.6}Génération des suggestions}{3}{}%
+\contentsline {section}{\numberline {3}Présentation théorique des algorithmes}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Algorithme de Knuth-Morris-Pratt (KMP)}{3}{}%
 \contentsline {subsection}{\numberline {3.2}Algorithme d’Aho-Ullman}{3}{}%
 \contentsline {subsection}{\numberline {3.3} Mesure de Similarité et graphe de Jaccard}{4}{}%
-\contentsline {subsection}{\numberline {3.4} Closeness Centrality }{5}{}%
+\contentsline {subsection}{\numberline {3.4} Closeness Centrality }{6}{}%
 \contentsline {subsection}{\numberline {3.5} Betweenness Centrality }{6}{}%
-\contentsline {subsection}{\numberline {3.6} PageRank Centrality }{6}{}%
+\contentsline {subsection}{\numberline {3.6} PageRank Centrality }{7}{}%
 \contentsline {section}{\numberline {4}Partie test : obtention des testbeds}{7}{}%
 \contentsline {subsection}{\numberline {4.1}Jeux de données utilisés}{7}{}%
-\contentsline {subsection}{\numberline {4.2}Jeux de données utilisés}{7}{}%
-\contentsline {subsection}{\numberline {4.3}Prétraitement des données}{7}{}%
-\contentsline {section}{\numberline {5}Conclusion}{8}{}%
+\contentsline {subsection}{\numberline {4.2}Jeux de données utilisés}{8}{}%
+\contentsline {subsection}{\numberline {4.3}Prétraitement des données}{8}{}%
+\contentsline {section}{\numberline {5}Tests de performance et résultats}{8}{}%
+\contentsline {subsection}{\numberline {5.1}Méthodologie de test}{8}{}%
+\contentsline {subsection}{\numberline {5.2}Temps d’exécution des algorithmes}{8}{}%
+\contentsline {section}{\numberline {6}Discussion des résultats}{8}{}%
+\contentsline {section}{\numberline {7}Conclusion}{10}{}%

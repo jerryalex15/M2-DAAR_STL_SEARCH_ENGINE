@@ -60,6 +60,13 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
     \subsection{Définition du Problème de Recherche d'Information}
     Rechercher un livre dans une vaste collection nécessite un système capable d'extraire les documents pertinents en fonction de mots-clés spécifiques. Il s'agit de permettre à un utilisateur de retrouver des livres en fonction des mots ou expressions régulières qu'ils contiennent, dans une collection volumineuse où la recherche manuelle serait impraticable Au-delà de la simple recherche textuelle, le système classe les documents selon leur pertinence et propose des suggestions basées sur la similarité entre les livres. Cette approche assure une navigation fluide et une exploration efficace du contenu disponible.
 
+    \subsection{Choix des technologies pour le moteur de recherche}
+    Le choix des technologies utilisées dans la création d’un moteur de recherche est primordial pour garantir non seulement des performances optimales, mais aussi une évolutivité à long terme. Dans le cadre de ce projet, Flask a été sélectionné pour le backend, tandis qu’Angular a été choisi pour le frontend, deux frameworks qui offrent une combinaison puissante pour répondre aux besoins du projet.
+
+    Flask, un framework léger et flexible basé sur Python, permet de construire rapidement des API performantes tout en facilitant l’intégration avec des bibliothèques Python puissantes. Python dispose d’un large écosystème d’outils dédiés à la manipulation de données, ce qui est particulièrement utile pour le traitement de texte et l’analyse de données dans le cadre d’un moteur de recherche. 
+
+    Angular, quant à lui, est un framework JavaScript très puissant pour créer des applications web dynamiques et réactives. L’un de ses grands avantages est sa capacité à produire des applications multiplates-formes, c’est-à-dire utilisables non seulement sur des ordinateurs via des navigateurs web, mais aussi sur des smartphones et tablettes. Cela est rendu possible grâce à Angular qui permet de créer des applications responsive, adaptées à différents types de dispositifs avec une seule base de code. Ainsi, l’expérience utilisateur est fluide, peu importe l’appareil utilisé. Angular gère efficacement les interactions utilisateur en temps réel, assurant une recherche rapide et dynamique.
+
     \subsection{Stockage et Indexation des Documents}
     Pour répondre efficacement à ces exigences, nous avons conçu une architecture de stockage à deux niveaux. Les documents textuels, téléchargés depuis \textbf{The Gutenberg Project}\cite{gutenberg}, sont conservés dans leur format original $(.txt)$ au sein d’un répertoire dédié, assurant ainsi leur intégrité. Leurs métadonnées sont parallèlement stockées au format JSON pour en faciliter l’exploitation et la représentation.
 
@@ -84,7 +91,9 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
     
     Pour faciliter l’obtention des scores TF-IDF, Python offre la méthode TfidfVectorizer à travers sa bibliothèque scikit-learn\cite{scikitlearn}. La complexité globale de cette méthode est estimée comme ~ $O(n*m)$ sur un corpus de $n$ documents contenant un total de $m$ mots avec des optimisations internes utilisées par scikit-learn. 
     
-    Quant à la construction de la table d’index, nous avons pris en entrée le résultat de la méthode TfidfVectorizer. Ensuite, en $O(T \times N)$ où avec $T$ étant le nombre de termes et $N$ étant le nombre de livres, nous obtenons la table d’index dans laquelle chaque terme est associé aux livres qui le concernent\cite{coursrechercheinfo}.
+    Cette méthode est exécutée sur l’ensemble des livres dupliqués temporairement. Cela nous permet de répéter une quinzaine de fois le nom de l’auteur et une dizaine de fois le titre sans modifier les livres originaux. Ainsi, les titres et les auteurs seront mis en évidence grâce à leurs multiples occurrences dans les livres. Une fois le traitement terminé, nous supprimerons ces documents temporaires afin de libérer de l’espace.
+
+    Quant à la construction de la table d’index, nous avons pris en entrée le résultat de la méthode TfidfVectorizer (\textit{une matrice d'adjacence}). Ensuite, en $O(T \times N)$ où $T$ étant le nombre de termes et $N$ étant le nombre de livres, nous obtenons la table d’index dans laquelle chaque terme est associé aux livres qui le concernent\cite{coursrechercheinfo} pour construire notre liste d’adjacence.
 
     \subsection{Graphes de Jaccard et similarité documentaire}
     Pour mettre en œuvre les fonctionnalités de suggestion, nous avons construit un graphe de Jaccard représenté par une matrice d'adjacence. Chaque livre est représenté comme un nœud dans un graphe. Cette structure modélise les relations de similarité entre les documents, chaque arête étant pondérée selon la distance de Jaccard calculée entre deux livres. La liaison entre 2 nœuds est établie si la distance entre ces 2 nœuds est inférieure à un seuil (0.5 dans notre cas). Cette mesure, basée sur le rapport entre l'intersection et l'union des ensembles de termes contenus dans les documents, permet d'identifier des textes thématiquement proches même lorsqu'ils ne partagent pas exactement les mêmes mots-clés recherchés par l'utilisateur. 
@@ -113,6 +122,13 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
     Les indices de centralité, tels que le betweenness, le closeness et le PageRank, sont déjà implémentés dans la bibliothèque  \textit{NetworkX}\cite{networkx} de Python. La matrice d’adjacence, la table d’index ainsi que les indices de centralité sont stockés dans un objet sérialisé Python afin de faciliter l’accès aux données lors de la recherche.
 
     L’utilisateur pourra spécifier l’indice de centralité de son choix pour le classement dans la recherche avancée. Nous détaillerons davantage ces mesures de centralité dans la section suivante.
+
+    \subsection{Génération des suggestions}
+    Dans le cadre de notre moteur de recherche de livres, il est essentiel d’offrir aux utilisateurs des recommandations pertinentes basées sur leurs recherches initiales. Pour ce faire, nous avons mis en place un algorithme de génération de suggestions s’appuyant sur une structure de graphe représentée par une matrice d’adjacence.
+    
+    L’algorithme repose sur l’exploitation des relations entre les livres afin d’identifier des suggestions pertinentes. Nous partons des meilleurs résultats retournés par la recherche, qui correspondent aux documents les plus pertinents selon la requête de l’utilisateur. Ensuite, nous explorons la matrice d’adjacence pour extraire les documents voisins de ces résultats initiaux. Les résultats les plus pertinents constituent les sommets (livres) privilégiés en premier.
+    
+    Le processus s’arrête dès qu’un nombre maximal de suggestions est atteint, garantissant ainsi des recommandations pertinentes et limitées en quantité pour optimiser l’expérience utilisateur.
 
 \section{Présentation théorique des algorithmes}
     \subsection{Algorithme de Knuth-Morris-Pratt (KMP)}
@@ -308,9 +324,36 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
     Avant d’utiliser les textes pour l’analyse, nous avons appliqué plusieurs étapes de prétraitement :
     \begin{itemize}
         \item \textit{Tokenisation :} Nous avons utilisé la bibliothèque \textit{NLTK} pour tokeniser les textes et obtenir une liste de mots à partir de chaque livre. Cette bibliothèque est notamment utilisée lors de la construction du graphe de Jaccard. Lors de la construction de la table d’index, la méthode \textit{TfidfVectorizer} intègre déjà un tokenizeur de texte.
-        \item \textit{Nettoyage : }Le texte brut a été nettoyé en supprimant les caractères spéciaux, en convertissant tous les mots en minuscules et en éliminant les mots de moins de 3 caractères. Les mots ainsi retenus sont stockés dans une liste. Dans le calcul de la similarité de Jaccard, ces mots sont placés dans un ensemble (\textit{set}) de Python.
+        \item \textit{Nettoyage : }Le texte brut a été nettoyé en supprimant les caractères spéciaux, en convertissant tous les mots en minuscules et en éliminant les mots de moins de 3 caractères. Les mots ainsi retenus sont stockés dans une liste. Dans le calcul de la similarité de Jaccard, ces mots sont placés dans un ensemble (\textit{set en Python}).
         \item \textit{Suppression des stopwords :} Nous avons utilisé la liste de stopwords fournie par la bibliothèque python \textit{NLTK} pour éliminer les mots courants qui n’apportent pas d’information pertinente. Cela permet de se concentrer sur les mots significatifs dans chaque texte.
     \end{itemize}
+
+\section{Tests de performance et résultats}
+    \subsection{Méthodologie de test}
+    Pour réaliser les tests, nous allons examiner une à une les différentes méthodes de recherche disponibles dans l’application, à savoir : la recherche par mot-clé, la recherche par expression régulière (regex) et la recherche avancée, qui permet de classer les résultats par ordre de pertinence tout en proposant des suggestions appropriées.
+    Pour chaque test, nous utiliserons cinq mots-clés ou expressions régulières et analyserons les résultats obtenus en fonction du temps d’exécution ainsi que du nombre de livres retournés.
+
+    \subsection{Temps d’exécution des algorithmes}
+
+    lorem upsum feisfg hgfbegjhbqdjfhqbsf
+
+    Ajouter ici les Diagramme de testbeds
+
+    blablabalbalbalbalablababalabalbalbablala
+
+    bodbdobdobdodbodbdobdobdob
+
+
+\section{Discussion des résultats}
+Avoir un moteur de recherche qui répond dans les meilleurs délais possibles est toujours l’idéal. Lors de nos tests de performance, nous avons observé que nos algorithmes de recherche retournent les résultats quasiment instantanément, avec le temps de réponse le plus long inférieur à 281,42 millisecondes. Cette rapidité est en grande partie due au choix de stockage de la table d’index, qui est un objet sérialisé en Python $(.pkl)$ sous forme de dictionnaire \textit{(hashmap)}. Cet objet permet d’obtenir en temps constant $O(1)$ les listes de livres associées à chaque terme recherché. De plus, d’autres objets, tels que la matrice d’adjacence et les indices de centralité, sont pré-calculés pour éviter de les recalculer à chaque recherche. Il suffit simplement de charger ces objets lors de chaque requête.
+
+Cependant, bien que l’utilisation de fichiers sérialisés soit efficace pour de petites à moyennes tailles de données, elle présente certaines limitations, notamment pour des objets volumineux. La sérialisation d’objets volumineux peut entraîner des problèmes de mémoire et de performance, notamment lors du chargement ou de la sauvegarde de fichiers. En outre, les fichiers sérialisés peuvent devenir difficiles à gérer et à maintenir à mesure que la taille des données augmente.
+
+En termes de sécurité, la sérialisation d’objets Python peut introduire des vulnérabilités, surtout lorsque des fichiers sérialisés sont chargés depuis des sources non fiables. Un attaquant pourrait potentiellement injecter du code malveillant dans un fichier sérialisé.
+
+Pour les objets de grande taille, une alternative consiste à utiliser une base de données relationnelle optimisée pour le stockage et l’accès rapide aux données, comme \textit{SQLite} pour des applications locales ou \textit{PostgreSQL} pour des applications plus robustes et à grande échelle. Ces bases de données permettent de gérer des volumes de données plus importants de manière évolutive. Elles disposent de mécanismes d’indexation qui accélèrent considérablement les recherches en permettant une récupération rapide des données pertinentes sans avoir à parcourir l’intégralité des enregistrements.
+
+En résumé, bien que la sérialisation d’objets Python offre une solution rapide et pratique pour des données de petite taille, il est judicieux d’opter pour des solutions plus adaptées à grande échelle, comme les bases de données ou les caches en mémoire, afin de garantir la performance à long terme.
 \newpage
 \section{Conclusion}
 

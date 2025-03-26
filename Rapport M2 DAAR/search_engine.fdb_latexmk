@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex search_engine"] 1742758298.59749 "search_engine.aux" "search_engine.bbl" "search_engine" 1742759090.12783 0
+["bibtex search_engine"] 1742895116.64409 "search_engine.aux" "search_engine.bbl" "search_engine" 1742895117.34756 0
   "./references.bib" 1742753078.54176 3295 3fa9b3eb4b4ddb5d3b9d926b7a228e6f ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "search_engine.aux" 1742759089.90991 4533 b8ad1c5f99220140a145d925e3ea4465 "pdflatex"
+  "search_engine.aux" 1742895117.16706 5276 bb4be0899c9828391be395ba30d5537b "pdflatex"
   (generated)
   "search_engine.bbl"
   "search_engine.blg"
   (rewritten before read)
-["pdflatex"] 1742759089.45713 "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" "search_engine.pdf" "search_engine" 1742759090.12794 0
-  "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" 1742759089.26202 28579 792a2d969606e7f0b38f32dbadd6af3f ""
+["pdflatex"] 1742895116.72858 "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" "search_engine.pdf" "search_engine" 1742895117.34767 0
+  "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" 1742895115.79907 35315 7da0d53dfc1d5e88e051bd2b33485e16 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -83,10 +83,10 @@
   "ressources/Jaccard_graph.png" 1742746767.99988 212663 437ff96a7e148456490c0461f6394b00 ""
   "ressources/NDFA.drawio.png" 1742688146.31429 36585 2d5e6520ee8f3643a6535453a1c38705 ""
   "ressources/logoSorbonne.png" 1742499443.32251 5811 7a5f3dd95872d8d7755bfffa779e71ac ""
-  "search_engine.aux" 1742759089.90991 4533 b8ad1c5f99220140a145d925e3ea4465 "pdflatex"
-  "search_engine.bbl" 1742758298.67355 2208 4a7f40089f69aac9eb057fb307209def "bibtex search_engine"
-  "search_engine.tex" 1742759089.26202 28579 792a2d969606e7f0b38f32dbadd6af3f ""
-  "search_engine.toc" 1742759089.91093 1535 471896dc98ae3b9ee18114796e12b367 "pdflatex"
+  "search_engine.aux" 1742895117.16706 5276 bb4be0899c9828391be395ba30d5537b "pdflatex"
+  "search_engine.bbl" 1742895116.72721 2208 4a7f40089f69aac9eb057fb307209def "bibtex search_engine"
+  "search_engine.tex" 1742895115.79907 35315 7da0d53dfc1d5e88e051bd2b33485e16 ""
+  "search_engine.toc" 1742895117.16781 2032 0f14e4ae507c85db7a2ce361ed0fa562 "pdflatex"
   (generated)
   "search_engine.aux"
   "search_engine.log"

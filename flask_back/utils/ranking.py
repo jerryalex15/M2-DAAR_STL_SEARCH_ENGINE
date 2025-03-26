@@ -9,4 +9,4 @@ def rank_documents_by_relevance(results, centrality_scores, centrality_type="pag
     sorted_results = sorted(ranked_results, key=lambda x: x[1], reverse=True)
     
     # Limiter le nombre de résultats à 50
-    return sorted_results[:50]
+    return sorted_results
