@@ -335,17 +335,43 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
 
     \subsection{Temps d’exécution des algorithmes}
 
-    lorem upsum feisfg hgfbegjhbqdjfhqbsf
+    \begin{itemize}
+        \item \textit{Recherche simple :} Le test réalisé avec la recherche simple montre une bonne performance en termes de temps d’exécution. Dans une bibliothèque de 1 664 livres, la recherche avec 5 termes, que ce soit par mot-clé ou par une expression régulière (voir Figure~\ref{fig:ExcelMotCleSimple} et Figure~\ref{fig:ExcelRegexSimple}), n’a pas dépassé $0.28ms$. 
+        \begin{figure}[H] % Utilisation de l'option [h] pour placer l'image ici
+            \centering
+            \includegraphics[width=0.75\textwidth]{./ressources/mot_cle_simple.png}
+            \caption{Diagramme en bâtons de la recherche simple par mot clé}
+            \cite{ExcelTable}
+            \label{fig:ExcelMotCleSimple}
+        \end{figure}
+        \begin{figure}[H] % Utilisation de l'option [h] pour placer l'image ici
+            \centering
+            \includegraphics[width=0.75\textwidth]{./ressources/regex_simple.png}
+            \caption{Diagramme en bâtons de la recherche simple par expression régulière }
+            \cite{ExcelTable}
+            \label{fig:ExcelRegexSimple}
+        \end{figure}
 
-    Ajouter ici les Diagramme de testbeds
-
-    blablabalbalbalbalablababalabalbalbablala
-
-    bodbdobdobdodbodbdobdobdob
+        \item \textit{Recherche avancée : } On pourrait s’attendre à ce qu’une recherche par expression régulière soit lente en raison du parcours des différents motifs qu’elle contient. Cependant, nos tests montrent de bonnes performances, avec un temps d’exécution moyen de $~0,30 ms$. Dans le pire des cas, la recherche a nécessité $7,03 ms$ pour parcourir tous les livres et proposer des suggestions. Afin d’optimiser cela, nous avons décidé de limiter la liste des suggestions à 100 résultats (voir Figure~\ref{fig:ExcelMotCleAvance} et Figure~\ref{fig:ExcelRegexAvance}). L’algorithme est conçu pour s’arrêter dès que ce seuil est atteint, en s’appuyant sur les voisinages.
+        \begin{figure}[H] % Utilisation de l'option [h] pour placer l'image ici
+            \centering
+            \includegraphics[width=0.75\textwidth]{./ressources/mot_cle_avance.png}
+            \caption{Diagramme en bâtons de la recherche avancée par mot clé}
+            \cite{ExcelTable}
+            \label{fig:ExcelMotCleAvance}
+        \end{figure}
+        \begin{figure}[H] % Utilisation de l'option [h] pour placer l'image ici
+            \centering
+            \includegraphics[width=0.75\textwidth]{./ressources/regex_avance.png}
+            \caption{Diagramme en bâtons de la recherche avancée par expression régulière }
+            \cite{ExcelTable}
+            \label{fig:ExcelRegexAvance}
+        \end{figure}
+    \end{itemize}
 
 
 \section{Discussion des résultats}
-Avoir un moteur de recherche qui répond dans les meilleurs délais possibles est toujours l’idéal. Lors de nos tests de performance, nous avons observé que nos algorithmes de recherche retournent les résultats quasiment instantanément, avec le temps de réponse le plus long inférieur à 281,42 millisecondes. Cette rapidité est en grande partie due au choix de stockage de la table d’index, qui est un objet sérialisé en Python $(.pkl)$ sous forme de dictionnaire \textit{(hashmap)}. Cet objet permet d’obtenir en temps constant $O(1)$ les listes de livres associées à chaque terme recherché. De plus, d’autres objets, tels que la matrice d’adjacence et les indices de centralité, sont pré-calculés pour éviter de les recalculer à chaque recherche. Il suffit simplement de charger ces objets lors de chaque requête.
+Avoir un moteur de recherche qui répond dans les meilleurs délais possibles est toujours l’idéal. Lors de nos tests de performance, nous avons observé que nos algorithmes de recherche retournent les résultats quasiment instantanément. Cette rapidité s'explique par le choix de stockage de la table d’index (Liste d’adjacence), qui est un objet sérialisé en Python $(.pkl)$ sous forme de dictionnaire \textit{(hashmap)}. Cet objet permet d’obtenir en temps constant $O(1)$ les listes de livres associées à chaque terme recherché. De plus, d’autres objets, tels que la matrice d’adjacence et les indices de centralité, sont pré-calculés pour éviter de les recalculer à chaque recherche. Il suffit simplement de charger ces objets lors de chaque requête.
 
 Cependant, bien que l’utilisation de fichiers sérialisés soit efficace pour de petites à moyennes tailles de données, elle présente certaines limitations, notamment pour des objets volumineux. La sérialisation d’objets volumineux peut entraîner des problèmes de mémoire et de performance, notamment lors du chargement ou de la sauvegarde de fichiers. En outre, les fichiers sérialisés peuvent devenir difficiles à gérer et à maintenir à mesure que la taille des données augmente.
 
