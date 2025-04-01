@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex search_engine"] 1743111152.39521 "search_engine.aux" "search_engine.bbl" "search_engine" 1743111153.32734 0
+["bibtex search_engine"] 1743541645.60114 "search_engine.aux" "search_engine.bbl" "search_engine" 1743541667.60092 0
   "./references.bib" 1743107443.25089 3483 29c82d1eef3bee140bc08e61b836db31 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "search_engine.aux" 1743111153.14074 6424 a5b6da0277e2a31222d11a04d3c0a8ee "pdflatex"
+  "search_engine.aux" 1743541667.3973 6424 a5b6da0277e2a31222d11a04d3c0a8ee "pdflatex"
   (generated)
   "search_engine.bbl"
   "search_engine.blg"
   (rewritten before read)
-["pdflatex"] 1743111152.47151 "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" "search_engine.pdf" "search_engine" 1743111153.32747 0
-  "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" 1743111151.34229 37689 7829848b7bc8ef9685371f36732cb55c ""
+["pdflatex"] 1743541666.45792 "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" "search_engine.pdf" "search_engine" 1743541667.60104 0
+  "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" 1743541666.27956 39600 f77bef6443571a5636b30d04e5c00f43 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -82,15 +82,15 @@
   "ressources/DFA_optimized.drawio.png" 1742688133.6609 11201 b3c19b2c69fa09cb9ad724042393cad8 ""
   "ressources/Jaccard_graph.png" 1742746767.99988 212663 437ff96a7e148456490c0461f6394b00 ""
   "ressources/NDFA.drawio.png" 1742688146.31429 36585 2d5e6520ee8f3643a6535453a1c38705 ""
-  "ressources/logoSorbonne.png" 1742499443.32251 5811 7a5f3dd95872d8d7755bfffa779e71ac ""
+  "ressources/Sciences_Sorbonne_Universite.png" 1743540702.06593 77883 2d84976e8428b3320bbf71724a02303a ""
   "ressources/mot_cle_avance.png" 1743106160.34396 86544 4f3c0e183985d91b39db12825248d458 ""
   "ressources/mot_cle_simple.png" 1743106996.09939 84977 df3bacd36ef93579d64abe50a3841216 ""
   "ressources/regex_avance.png" 1743106943.28268 98635 446b7cb9bae3c8152e71d1be4827974e ""
   "ressources/regex_simple.png" 1743110852.4648 93940 d90b563d6a9e10259a70dda004530f48 ""
-  "search_engine.aux" 1743111153.14074 6424 a5b6da0277e2a31222d11a04d3c0a8ee "pdflatex"
-  "search_engine.bbl" 1743111152.47004 2329 2a3f8c9c35f3588edf6495089a0746ae "bibtex search_engine"
-  "search_engine.tex" 1743111151.34229 37689 7829848b7bc8ef9685371f36732cb55c ""
-  "search_engine.toc" 1743111153.14199 2033 a02e0fc3c54ca72f1c9a6c79442698f7 "pdflatex"
+  "search_engine.aux" 1743541667.3973 6424 a5b6da0277e2a31222d11a04d3c0a8ee "pdflatex"
+  "search_engine.bbl" 1743541645.68214 2329 2a3f8c9c35f3588edf6495089a0746ae "bibtex search_engine"
+  "search_engine.tex" 1743541666.27956 39600 f77bef6443571a5636b30d04e5c00f43 ""
+  "search_engine.toc" 1743541667.39846 2033 a02e0fc3c54ca72f1c9a6c79442698f7 "pdflatex"
   (generated)
   "search_engine.aux"
   "search_engine.log"

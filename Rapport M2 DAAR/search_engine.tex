@@ -23,16 +23,16 @@
 % Page de couverture
 \begin{titlepage}
     \centering
-    \includegraphics[width=0.4\textwidth]{ressources/logoSorbonne.png}
+    \includegraphics[width=0.4\textwidth]{ressources/Sciences_Sorbonne_Universite.png}
     \begin{center}
         \hrulefill \\[1cm]
         \Huge\textbf{Sorbonne Université} \\[1cm]
         \Large\textbf{Master 2 Science et Technologie du Logiciel} \\ [1cm]
         \hrulefill \\[1cm]
         \huge\textbf{Développement des Algorithmes d’Application Réticulaire} \\[1cm]
-        \huge\textbf{\textcolor{cyan}{Projet final - Moteur de recherche d’une bibliothèque}} \\[2cm]
-        \hrulefill \\[1.5cm]
-        \Large\textbf{Auteurs:} Florian CODEBECQ, Nandraina RAZAFINDRAIBE\\[1cm] 
+        \huge\textbf{\textcolor{cyan}{Projet final - Moteur de recherche d’une bibliothèque}} \\[1cm]
+        \hrulefill \\[0.5cm]
+        \Large\textbf{Auteurs:} Florian CODEBECQ, Nandraina RAZAFINDRAIBE\\[0.5cm] 
         \Large\textbf{Responsable:} Binh-Minh BUI-XUAN\\[2.5cm]
         \textbf{Année scolaire:} 2024/2025  
     \end{center}
@@ -324,7 +324,7 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
     Avant d’utiliser les textes pour l’analyse, nous avons appliqué plusieurs étapes de prétraitement :
     \begin{itemize}
         \item \textit{Tokenisation :} Nous avons utilisé la bibliothèque \textit{NLTK} pour tokeniser les textes et obtenir une liste de mots à partir de chaque livre. Cette bibliothèque est notamment utilisée lors de la construction du graphe de Jaccard. Lors de la construction de la table d’index, la méthode \textit{TfidfVectorizer} intègre déjà un tokenizeur de texte.
-        \item \textit{Nettoyage : }Le texte brut a été nettoyé en supprimant les caractères spéciaux, en convertissant tous les mots en minuscules et en éliminant les mots de moins de 3 caractères. Les mots ainsi retenus sont stockés dans une liste. Dans le calcul de la similarité de Jaccard, ces mots sont placés dans un ensemble (\textit{set en Python}).
+        \item \textit{Nettoyage : }Le texte brut a été nettoyé en supprimant les caractères spéciaux, en convertissant tous les mots en minuscules et en éliminant les mots de moins de 3 caractères. Les mots ainsi retenus sont stockés dans une liste. Dans le calcul de la similarité de Jaccard, ces mots sont placés dans un ensemble (\textit{set} en \textit{Python}).
         \item \textit{Suppression des stopwords :} Nous avons utilisé la liste de stopwords fournie par la bibliothèque python \textit{NLTK} pour éliminer les mots courants qui n’apportent pas d’information pertinente. Cela permet de se concentrer sur les mots significatifs dans chaque texte.
     \end{itemize}
 
@@ -352,7 +352,7 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
             \label{fig:ExcelRegexSimple}
         \end{figure}
 
-        \item \textit{Recherche avancée : } On pourrait s’attendre à ce qu’une recherche par expression régulière soit lente en raison du parcours des différents motifs qu’elle contient. Cependant, nos tests montrent de bonnes performances, avec un temps d’exécution moyen de $~0,30 ms$. Dans le pire des cas, la recherche a nécessité $7,03 ms$ pour parcourir tous les livres et proposer des suggestions. Afin d’optimiser cela, nous avons décidé de limiter la liste des suggestions à 100 résultats (voir Figure~\ref{fig:ExcelMotCleAvance} et Figure~\ref{fig:ExcelRegexAvance}). L’algorithme est conçu pour s’arrêter dès que ce seuil est atteint, en s’appuyant sur les voisinages.
+        \item \textit{Recherche avancée : } On pourrait s’attendre à ce qu’une recherche par expression régulière soit lente en raison du parcours des différents motifs qu’elle contient. Cependant, nos tests montrent de bonnes performances, avec un temps d’exécution moyen de ~$0,30 ms$. Dans le pire des cas, la recherche a nécessité $7,03 ms$ pour parcourir tous les livres et proposer des suggestions. Afin d’optimiser cela, nous avons décidé de limiter la liste des suggestions à 100 résultats (voir Figure~\ref{fig:ExcelMotCleAvance} et Figure~\ref{fig:ExcelRegexAvance}). L’algorithme est conçu pour s’arrêter dès que ce seuil est atteint, en s’appuyant sur les voisinages.
         \begin{figure}[H] % Utilisation de l'option [h] pour placer l'image ici
             \centering
             \includegraphics[width=0.75\textwidth]{./ressources/mot_cle_avance.png}
@@ -382,7 +382,13 @@ Pour les objets de grande taille, une alternative consiste à utiliser une base 
 En résumé, bien que la sérialisation d’objets Python offre une solution rapide et pratique pour des données de petite taille, il est judicieux d’opter pour des solutions plus adaptées à grande échelle, comme les bases de données ou les caches en mémoire, afin de garantir la performance à long terme.
 \newpage
 \section{Conclusion}
+Le projet de développement d'un moteur de recherche pour une bibliothèque numérique, réalisé dans le cadre du Master 2 Science et Technologie du Logiciel à Sorbonne Université, a permis de concevoir une application web et mobile performante et intuitive. Ce moteur de recherche, basé sur des algorithmes avancés d'indexation et de classement, répond efficacement aux besoins des utilisateurs en leur permettant de naviguer aisément à travers une vaste collection de documents textuels.
 
+L'utilisation de technologies telles que Flask pour le backend et Angular pour le frontend a garanti une architecture robuste et évolutive, capable de gérer des milliers de documents tout en offrant une expérience utilisateur fluide et réactive. L'implémentation de la table d'indexation avec TF-IDF et la construction du graphe de Jaccard ont permis d'optimiser les recherches et de proposer des suggestions pertinentes, enrichissant ainsi l'interaction avec les utilisateurs.
+
+Les tests de performance ont démontré l'efficacité des algorithmes choisis, avec des temps d'exécution rapides même pour des requêtes complexes. Les indices de centralité, tels que le closeness, le betweenness et le PageRank, ont joué un rôle crucial dans le classement des résultats, offrant une pertinence accrue et une exploration plus fine du contenu textuel.
+
+Ce projet a non seulement répondu aux exigences techniques et fonctionnelles fixées, mais il a également ouvert la voie à des améliorations futures, telles que l'intégration de nouvelles fonctionnalités ou l'optimisation des performances pour des bases de données encore plus volumineuses. En somme, ce moteur de recherche constitue une solution innovante et efficace pour la recherche de documents dans une bibliothèque numérique, répondant ainsi aux besoins modernes d'accès rapide et pertinent à l'information.
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{references}
