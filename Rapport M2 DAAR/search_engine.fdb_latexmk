@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex search_engine"] 1743854649.45819 "search_engine.aux" "search_engine.bbl" "search_engine" 1743854687.24725 0
+["bibtex search_engine"] 1743896401.90814 "search_engine.aux" "search_engine.bbl" "search_engine" 1743896403.1402 0
   "./references.bib" 1743107443.25089 3483 29c82d1eef3bee140bc08e61b836db31 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "search_engine.aux" 1743854687.03684 6584 2684e45c3b7d0c5cb3126c1ae2382c52 "pdflatex"
+  "search_engine.aux" 1743896402.95568 6584 2684e45c3b7d0c5cb3126c1ae2382c52 "pdflatex"
   (generated)
   "search_engine.bbl"
   "search_engine.blg"
   (rewritten before read)
-["pdflatex"] 1743854686.06865 "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" "search_engine.pdf" "search_engine" 1743854687.24736 0
-  "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" 1743854685.86839 40091 573cac6375bf6f6f5785d4e0c9cb41e7 ""
+["pdflatex"] 1743896401.98749 "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" "search_engine.pdf" "search_engine" 1743896403.14031 0
+  "/Users/razafindraibenandrainajerryalex/Documents/Bosy/DAAR/Projet/SearchEngine/Rapport M2 DAAR/search_engine.tex" 1743896400.53056 40161 b3b28329846a3eb18aeadc9c8d9b0686 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -102,10 +102,10 @@
   "ressources/mot_cle_simple.png" 1743106996.09939 84977 df3bacd36ef93579d64abe50a3841216 ""
   "ressources/regex_avance.png" 1743106943.28268 98635 446b7cb9bae3c8152e71d1be4827974e ""
   "ressources/regex_simple.png" 1743110852.4648 93940 d90b563d6a9e10259a70dda004530f48 ""
-  "search_engine.aux" 1743854687.03684 6584 2684e45c3b7d0c5cb3126c1ae2382c52 "pdflatex"
-  "search_engine.bbl" 1743854649.5367 2329 2a3f8c9c35f3588edf6495089a0746ae "bibtex search_engine"
-  "search_engine.tex" 1743854685.86839 40091 573cac6375bf6f6f5785d4e0c9cb41e7 ""
-  "search_engine.toc" 1743854687.03788 2033 3beb3868c5380e2496b6b50e751f168c "pdflatex"
+  "search_engine.aux" 1743896402.95568 6584 2684e45c3b7d0c5cb3126c1ae2382c52 "pdflatex"
+  "search_engine.bbl" 1743896401.98596 2329 2a3f8c9c35f3588edf6495089a0746ae "bibtex search_engine"
+  "search_engine.tex" 1743896400.53056 40161 b3b28329846a3eb18aeadc9c8d9b0686 ""
+  "search_engine.toc" 1743896402.95675 2033 3beb3868c5380e2496b6b50e751f168c "pdflatex"
   (generated)
   "search_engine.aux"
   "search_engine.log"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.20)  5 APR 2025 14:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.20)  6 APR 2025 01:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -402,7 +402,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <./ressources/NDFA.drawio.png, id=29, 584.1825pt x 263.98625pt>
 File: ./ressources/NDFA.drawio.png Graphic file (type png)
 <use ./ressources/NDFA.drawio.png>
-Package pdftex.def Info: ./ressources/NDFA.drawio.png  used on input line 169.
+Package pdftex.def Info: ./ressources/NDFA.drawio.png  used on input line 170.
 (pdftex.def)             Requested size: 341.43307pt x 154.29639pt.
 
 
@@ -410,12 +410,12 @@ Package pdftex.def Info: ./ressources/NDFA.drawio.png  used on input line 169.
 <./ressources/DFA.drawio.png, id=33, 423.5825pt x 105.39375pt>
 File: ./ressources/DFA.drawio.png Graphic file (type png)
 <use ./ressources/DFA.drawio.png>
-Package pdftex.def Info: ./ressources/DFA.drawio.png  used on input line 182.
+Package pdftex.def Info: ./ressources/DFA.drawio.png  used on input line 183.
 (pdftex.def)             Requested size: 227.62206pt x 56.63516pt.
 <./ressources/DFA_optimized.drawio.png, id=34, 272.01625pt x 131.49126pt>
 File: ./ressources/DFA_optimized.drawio.png Graphic file (type png)
 <use ./ressources/DFA_optimized.drawio.png>
-Package pdftex.def Info: ./ressources/DFA_optimized.drawio.png  used on input line 196.
+Package pdftex.def Info: ./ressources/DFA_optimized.drawio.png  used on input line 197.
 (pdftex.def)             Requested size: 159.33821pt x 77.02739pt.
 
 
@@ -423,7 +423,7 @@ Package pdftex.def Info: ./ressources/DFA_optimized.drawio.png  used on input li
 <./ressources/Jaccard_graph.png, id=41, 531.1845pt x 506.6127pt>
 File: ./ressources/Jaccard_graph.png Graphic file (type png)
 <use ./ressources/Jaccard_graph.png>
-Package pdftex.def Info: ./ressources/Jaccard_graph.png  used on input line 226.
+Package pdftex.def Info: ./ressources/Jaccard_graph.png  used on input line 227.
 (pdftex.def)             Requested size: 295.90588pt x 282.22469pt.
 
 
@@ -435,12 +435,12 @@ Package pdftex.def Info: ./ressources/Jaccard_graph.png  used on input line 226.
 <./ressources/mot_cle_simple.png, id=54, 600.2425pt x 370.38374pt>
 File: ./ressources/mot_cle_simple.png Graphic file (type png)
 <use ./ressources/mot_cle_simple.png>
-Package pdftex.def Info: ./ressources/mot_cle_simple.png  used on input line 354.
+Package pdftex.def Info: ./ressources/mot_cle_simple.png  used on input line 355.
 (pdftex.def)             Requested size: 341.43307pt x 210.69139pt.
 <./ressources/regex_simple.png, id=55, 598.235pt x 368.37625pt>
 File: ./ressources/regex_simple.png Graphic file (type png)
 <use ./ressources/regex_simple.png>
-Package pdftex.def Info: ./ressources/regex_simple.png  used on input line 361.
+Package pdftex.def Info: ./ressources/regex_simple.png  used on input line 362.
 (pdftex.def)             Requested size: 341.43307pt x 210.24644pt.
 
 
@@ -448,12 +448,12 @@ Package pdftex.def Info: ./ressources/regex_simple.png  used on input line 361.
 <./ressources/mot_cle_avance.png, id=59, 598.235pt x 369.38pt>
 File: ./ressources/mot_cle_avance.png Graphic file (type png)
 <use ./ressources/mot_cle_avance.png>
-Package pdftex.def Info: ./ressources/mot_cle_avance.png  used on input line 370.
+Package pdftex.def Info: ./ressources/mot_cle_avance.png  used on input line 371.
 (pdftex.def)             Requested size: 341.43307pt x 210.81932pt.
 <./ressources/regex_avance.png, id=60, 600.2425pt x 370.38374pt>
 File: ./ressources/regex_avance.png Graphic file (type png)
 <use ./ressources/regex_avance.png>
-Package pdftex.def Info: ./ressources/regex_avance.png  used on input line 377.
+Package pdftex.def Info: ./ressources/regex_avance.png  used on input line 378.
 (pdftex.def)             Requested size: 341.43307pt x 210.69139pt.
 
 
@@ -472,13 +472,13 @@ L3 programming layer <2025-01-18>
 Here is how much of TeX's memory you used:
  7524 strings out of 473190
  120888 string characters out of 5715800
- 543228 words of memory out of 5000000
+ 542228 words of memory out of 5000000
  30675 multiletter control sequences out of 15000+600000
  600466 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,10n,65p,917b,428s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on search_engine.pdf (14 pages, 634080 bytes).
+Output written on search_engine.pdf (14 pages, 634585 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  71 compressed objects within 1 object stream

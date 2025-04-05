@@ -33,10 +33,11 @@
         \Large\textbf{Master 2 Science et Technologie du Logiciel} \\ [1cm]
         \hrulefill \\[1cm]
         \huge\textbf{Développement des Algorithmes d’Application Réticulaire} \\[1cm]
+        \huge\textbf{\textcolor{blue}{CHOIX A}} \\[1cm]
         \huge\textbf{\textcolor{cyan}{Projet final - Moteur de recherche d’une bibliothèque}} \\[1cm]
         \hrulefill \\[0.5cm]
         \Large\textbf{Auteurs:} Florian CODEBECQ, Nandraina RAZAFINDRAIBE\\[0.5cm] 
-        \Large\textbf{Responsable:} Binh-Minh BUI-XUAN\\[2.5cm]
+        \Large\textbf{Responsable:} Binh-Minh BUI-XUAN\\[1.5cm]
         \textbf{Année scolaire:} 2024/2025  
     \end{center}
 \end{titlepage}
@@ -293,7 +294,7 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
         \end{algorithmic}
         \end{algorithm}
 
-        Où $a$ est un vecteur contenant le score de PageRank pour chaque sommet (document), $M$ est la matrice d'adjacence d'un graphe, et $\epsilon$ est une valeur très proche de 0. Dans le domaine du WEB, on peut fixe à $300$fois le nombre d'itération dans la boucle (Résultat expérimental).
+        Où $a$ est un vecteur contenant le score de PageRank pour chaque sommet (document), $M$ est une matrice stochastique d'adjacence d'un graphe, et $\epsilon$ est une valeur très proche de 0. Dans le domaine du WEB, on peut fixe à $300$fois le nombre d'itération dans la boucle (Résultat expérimental).
 
     Il existe aussi un autre indice, \textit{HITS (Hyperlink-Induced Topic Search)}, qui constitue une approche complémentaire. Contrairement aux autres mesures qui attribuent un score unique de centralité, \textit{HITS} distingue deux rôles distincts au sein du réseau :
     Le score d’autorité, qui évalue la pertinence d’un document en fonction du nombre et de la qualité des liens pointant vers lui.

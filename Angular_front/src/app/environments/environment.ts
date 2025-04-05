@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://172.20.10.10:5001' // Remplace par ton IP
+    apiUrl: 'http://192.168.0.21:5001' // Remplace par ton IP
 };
