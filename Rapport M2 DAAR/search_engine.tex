@@ -2,6 +2,9 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{amssymb}
+\usepackage{algpseudocode}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{booktabs}
@@ -277,11 +280,20 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
     \subsection{ PageRank Centrality }
     Développé initialement par Brin et Page pour le moteur de recherche Google\cite{brin1998anatomy}, \textit{PageRank} est un algorithme qui attribue une pondération numérique à chaque élément d'un ensemble de documents liés par des hyperliens, dans le but de mesurer son importance relative au sein de cet ensemble. Dans notre adaptation, nous considérons les liens de similarité entre documents comme des "votes" d'importance, similaires aux hyperliens sur le web.
 
-    Le score PageRank $PR(A)$ d'un document $A$ est calculé de manière itérative par :
-    \[
-        PR(A) = (1 - d) + d \times \sum_{i \in In(A)} \frac{PR(i)}{L(i)}
-    \]
-    où $PR(A)$ est le PageRank de la page $A$, $In(A)$ est l’ensemble des pages pointant vers $A, L(i)$ est le nombre de liens sortants de la page $i$, et d est un facteur d’amortissement (souvent pris égal à 0.85).
+    Le score PageRank des documents est calculé de manière itérative par :
+
+    \begin{algorithm}[H]
+        \caption{PageRank avec condition d'arrêt basée sur la norme}
+        \begin{algorithmic}
+        \State $a \gets$ random dans $\mathbb{R}^n$ \Comment Initialisation
+        \While{$ ! ( 0 < \lVert a - M \cdot a \rVert < \epsilon ) $}
+            \State $a \gets M \cdot a$  
+        \EndWhile
+        \State \textbf{Return} $a$  \Comment $a$ : point fixe
+        \end{algorithmic}
+        \end{algorithm}
+
+        Où $a$ est un vecteur contenant le score de PageRank pour chaque sommet (document), $M$ est la matrice d'adjacence d'un graphe, et $\epsilon$ est une valeur très proche de 0. Dans le domaine du WEB, on peut fixe à $300$fois le nombre d'itération dans la boucle (Résultat expérimental).
 
     Il existe aussi un autre indice, \textit{HITS (Hyperlink-Induced Topic Search)}, qui constitue une approche complémentaire. Contrairement aux autres mesures qui attribuent un score unique de centralité, \textit{HITS} distingue deux rôles distincts au sein du réseau :
     Le score d’autorité, qui évalue la pertinence d’un document en fonction du nombre et de la qualité des liens pointant vers lui.
@@ -369,7 +381,7 @@ Au-delà de la conception technique, ce projet vise également à analyser la pe
         \end{figure}
     \end{itemize}
 
-
+\newpage
 \section{Discussion des résultats}
 Avoir un moteur de recherche qui répond dans les meilleurs délais possibles est toujours l’idéal. Lors de nos tests de performance, nous avons observé que nos algorithmes de recherche retournent les résultats quasiment instantanément. Cette rapidité s'explique par le choix de stockage de la table d’index (Liste d’adjacence), qui est un objet sérialisé en Python $(.pkl)$ sous forme de dictionnaire \textit{(hashmap)}. Cet objet permet d’obtenir en temps constant $O(1)$ les listes de livres associées à chaque terme recherché. De plus, d’autres objets, tels que la matrice d’adjacence et les indices de centralité, sont pré-calculés pour éviter de les recalculer à chaque recherche. Il suffit simplement de charger ces objets lors de chaque requête.
 
@@ -380,7 +392,7 @@ En termes de sécurité, la sérialisation d’objets Python peut introduire des
 Pour les objets de grande taille, une alternative consiste à utiliser une base de données relationnelle optimisée pour le stockage et l’accès rapide aux données, comme \textit{SQLite} pour des applications locales ou \textit{PostgreSQL} pour des applications plus robustes et à grande échelle. Ces bases de données permettent de gérer des volumes de données plus importants de manière évolutive. Elles disposent de mécanismes d’indexation qui accélèrent considérablement les recherches en permettant une récupération rapide des données pertinentes sans avoir à parcourir l’intégralité des enregistrements.
 
 En résumé, bien que la sérialisation d’objets Python offre une solution rapide et pratique pour des données de petite taille, il est judicieux d’opter pour des solutions plus adaptées à grande échelle, comme les bases de données ou les caches en mémoire, afin de garantir la performance à long terme.
-\newpage
+
 \section{Conclusion}
 Le projet de développement d'un moteur de recherche pour une bibliothèque numérique, réalisé dans le cadre du Master 2 Science et Technologie du Logiciel à Sorbonne Université, a permis de concevoir une application web et mobile performante et intuitive. Ce moteur de recherche, basé sur des algorithmes avancés d'indexation et de classement, répond efficacement aux besoins des utilisateurs en leur permettant de naviguer aisément à travers une vaste collection de documents textuels.
 
