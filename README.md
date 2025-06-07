@@ -66,7 +66,7 @@ Il permet aux utilisateurs de **rechercher, classer et explorer** des documents 
 ### 1. Backend
 
 ```bash
-cd backend
+cd flask_back
 pip install -r requirements.txt
 python app.py
 ```
@@ -74,7 +74,7 @@ python app.py
 ### 2. Frontend
 
 ```bash
-cd frontend
+cd Angular_front
 npm install
 ng serve
 ```
